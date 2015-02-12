@@ -35,7 +35,7 @@ angular.module('starter.controllers', [])
 
 .controller('CafeCtrl', function($scope, $http, $filter) {
   // $http.get('http://legacy.cafebonappetit.com/api/2/menus?cafe=17')
-  $http.get('public/menus.json')
+  $http.get('https://gist.githubusercontent.com/halloffame/30fc5f7585eef06b454d/raw/32141bb0ebc7b66107a2e263cf12af9f87f2eba3/menu.json')
     .then(function(res){
       $scope.days = res.data.days;
       $scope.items = res.data.items;
@@ -54,7 +54,7 @@ angular.module('starter.controllers', [])
 
 
 .controller('ChapelsCtrl', function($scope, $http) {
-  $http.get('public/chapels.json')
+  $http.get('https://gist.githubusercontent.com/halloffame/122124a23185dc246382/raw/7bbd24dbf259f55c04a404eee46d1b6595a85ff6/chapels.json')
     .then(function(res){
       $scope.chapels = res.data.events.slice(0,50);
     });
@@ -69,7 +69,8 @@ angular.module('starter.controllers', [])
 })
 
 .controller('ChapelCtrl', function($scope, $stateParams, $http, $filter) {
-  $http.get('public/chapels.json')
+  // $http.get('https://apps.biola.edu/chapel/api/v1/academic_years/12/events.json')
+  $http.get('https://gist.githubusercontent.com/halloffame/122124a23185dc246382/raw/7bbd24dbf259f55c04a404eee46d1b6595a85ff6/chapels.json')
     .then(function(res){
       // Todo, this should only query by ID. Or use already loaded data
       var chapels = res.data.events.slice(0,50);
