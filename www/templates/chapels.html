@@ -2,11 +2,12 @@
   <ion-content>
     <ion-list>
       <ion-item class="item-thumbnail-left" ng-repeat="chapel in chapels" href="#/app/chapels/{{chapel.id}}">
-        <img src="{{chapel.image}}" />
+        <img ng-if="chapel.speakers.length > 0" src="{{chapel.speakers[0].thumbnail_photo_url}}" />
         <h2>{{chapel.title}}</h2>
-        <p><strong>{{chapel.date}} @ {{chapel.time}}</strong></p>
-        <p>{{chapel.speaker}}</p>
-        <p><i class="icon ion-location"></i> {{chapel.location}}</p>
+        <!-- <p><strong>{{chapel.date}} @ {{chapel.time}}</strong></p> -->
+        <p><strong>{{formatDate(chapel.starts_at)}}</strong></p>
+        <p>{{ formatSpeakers(chapel.speakers) }}</p>
+        <p ng-if="chapel.location"><i class="icon ion-location"></i> {{chapel.location.name}}</p>
       </ion-item>
     </ion-list>
   </ion-content>

@@ -1,0 +1,55 @@
+[
+  {
+    "id": 1,
+    "date": "Mon, Feb 9",
+    "time": "9:30 AM",
+    "title": "All in the Family",
+    "url": "",
+    "series": "Family Life Series",
+    "speaker": "Ed Uszynski",
+    "image": "https://apps.biola.edu/chapel/uploads/speaker/profile_photo/1863/profile_ed-uszynski.jpg",
+    "location": "Chase Gymnasium"
+  },
+  {
+    "id": 2,
+    "date": "Tue, Feb 10",
+    "time": "9:30 AM",
+    "title": "Forgiveness: The Minister's Best Friend",
+    "url": "",
+    "series": "Family Life Series",
+    "speaker": "Ed Uszynski",
+    "image": "https://apps.biola.edu/chapel/uploads/speaker/profile_photo/1863/profile_ed-uszynski.jpg",
+    "location": "Calvary Chapel"
+  },
+  {
+    "id": 3,
+    "date": "Tue, Feb 10",
+    "time": "5:00 PM",
+    "title": "Fives",
+    "url": "",
+    "series": "",
+    "speaker": "",
+    "location": "Calvary Chapel"
+  },
+  {
+    "id": 4,
+    "date": "Tue, Feb 10",
+    "time": "7:30 PM",
+    "title": "Department Chapel - Spanish",
+    "url": "",
+    "series": "",
+    "speaker": "",
+    "location": "Mayers Auditorium"
+  },
+  {
+    "id": 5,
+    "date": "Wed, Feb 11",
+    "time": "9:30 AM",
+    "title": "In a Culture Committed to Isolation, Can Real Relationship Even Happen?",
+    "url": "",
+    "series": "Family Life Series",
+    "speaker": "Ed Uszynski",
+    "image": "https://apps.biola.edu/chapel/uploads/speaker/profile_photo/1863/profile_ed-uszynski.jpg",
+    "location": "Chase Gymnasium"
+  }
+]

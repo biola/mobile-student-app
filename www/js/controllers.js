@@ -33,17 +33,62 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('ChapelsCtrl', function($scope, $http) {
-  $http.get('/public/chapels.json')
+.controller('CafeCtrl', function($scope, $http, $filter) {
+  // $http.get('http://legacy.cafebonappetit.com/api/2/menus?cafe=17')
+  $http.get('public/menus.json')
     .then(function(res){
-      $scope.chapels = res.data;
+      $scope.days = res.data.days;
+      $scope.items = res.data.items;
+      $scope.cor_icons = res.data.cor_icons;
     });
+
+  $scope.currentMenu = function() {
+    if ($scope.days) {
+      var found = $filter('filter')($scope.days, {date: "2015-02-11"}, true);
+      if (found.length) {
+        return found[0].cafes[17].dayparts[0]
+      }
+    }
+  }
 })
 
-.controller('ChapelCtrl', function($scope, $stateParams, $http) {
-  $http.get('/public/chapels.json')
+
+.controller('ChapelsCtrl', function($scope, $http) {
+  $http.get('public/chapels.json')
     .then(function(res){
-      // TODO: This should load by id...
-      $scope.chapel = res.data[+$stateParams.chapelId - 1];
+      $scope.chapels = res.data.events.slice(0,50);
     });
+
+  $scope.formatDate = function(date) {
+    date = new Date(date)
+    return date.toDateString() + " @ " + date.toLocaleTimeString();
+  }
+  $scope.formatSpeakers = function(speakers) {
+    return speakers.map(function(s){ return s.name; }).join(', ');
+  }
+})
+
+.controller('ChapelCtrl', function($scope, $stateParams, $http, $filter) {
+  $http.get('public/chapels.json')
+    .then(function(res){
+      // Todo, this should only query by ID. Or use already loaded data
+      var chapels = res.data.events.slice(0,50);
+      var found = $filter('filter')(chapels, {id: +$stateParams.chapelId}, true);
+      if (found.length) {
+        $scope.chapel = found[0];
+      }
+    });
+
+  $scope.speakers = function() {
+    $scope.chapel.speakers.join(', ');
+  }
+
+  $scope.formatDate = function(date) {
+    date = new Date(date)
+    return date.toDateString() + " @ " + date.toLocaleTimeString();
+  }
+  $scope.formatSpeakers = function(speakers) {
+    return speakers.map(function(s){ return s.name; }).join(', ');
+  }
+
 });
