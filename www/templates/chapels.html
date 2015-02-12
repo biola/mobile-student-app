@@ -1,0 +1,13 @@
+<ion-view view-title="Chapels">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-thumbnail-left" ng-repeat="chapel in chapels" href="#/app/chapels/{{chapel.id}}">
+        <img src="{{chapel.image}}" />
+        <h2>{{chapel.title}}</h2>
+        <p><strong>{{chapel.date}} @ {{chapel.time}}</strong></p>
+        <p>{{chapel.speaker}}</p>
+        <p><i class="icon ion-location"></i> {{chapel.location}}</p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

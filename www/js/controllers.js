@@ -33,16 +33,17 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('PlaylistsCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
-  ];
+.controller('ChapelsCtrl', function($scope, $http) {
+  $http.get('/public/chapels.json')
+    .then(function(res){
+      $scope.chapels = res.data;
+    });
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
+.controller('ChapelCtrl', function($scope, $stateParams, $http) {
+  $http.get('/public/chapels.json')
+    .then(function(res){
+      // TODO: This should load by id...
+      $scope.chapel = res.data[+$stateParams.chapelId - 1];
+    });
 });
