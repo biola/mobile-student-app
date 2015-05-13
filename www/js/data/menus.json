@@ -1,0 +1,609 @@
+{
+  "days": [
+    {
+      "date": "2015-02-11",
+      "cafes": {
+        "17": {
+          "name": "Café Biola",
+          "menu_id": "69850",
+          "dayparts": [
+            [
+              {
+                "starttime": "07:00",
+                "endtime": "11:00",
+                "id": "1",
+                "label": "Breakfast",
+                "abbreviation": "B",
+                "stations": [
+                  {
+                    "order_id": "0001-571",
+                    "id": "571",
+                    "label": "Home Cookin' Lunch",
+                    "soup": 0,
+                    "items": [
+                      "3250913"
+                    ]
+                  },
+                  {
+                    "order_id": "0004-6961",
+                    "id": "6961",
+                    "label": "Chef's Table M.T.O.",
+                    "soup": 0,
+                    "items": [
+                      "3238561"
+                    ]
+                  },
+                  {
+                    "order_id": "0005-573",
+                    "id": "573",
+                    "label": "Pizzeria",
+                    "soup": 0,
+                    "items": [
+                      "3251769"
+                    ]
+                  },
+                  {
+                    "order_id": "0006-574",
+                    "id": "574",
+                    "label": "6th St. Grill",
+                    "soup": 0,
+                    "items": [
+                      "3251106"
+                    ]
+                  },
+                  {
+                    "order_id": "0008-575",
+                    "id": "575",
+                    "label": "Stockpot",
+                    "soup": 0,
+                    "items": [
+                      "3251162"
+                    ]
+                  },
+                  {
+                    "order_id": "0010-577",
+                    "id": "577",
+                    "label": "The Garden",
+                    "soup": 0,
+                    "items": [
+                      "3238678"
+                    ]
+                  }
+                ]
+              },
+              {
+                "starttime": "11:00",
+                "endtime": "16:00",
+                "id": "3",
+                "label": "Lunch",
+                "abbreviation": "L",
+                "stations": [
+                  {
+                    "order_id": "0001-571",
+                    "id": "571",
+                    "label": "Home Cookin' Lunch",
+                    "soup": 0,
+                    "items": [
+                      "3250927"
+                    ]
+                  },
+                  {
+                    "order_id": "0004-6961",
+                    "id": "6961",
+                    "label": "Chef's Table M.T.O.",
+                    "soup": 0,
+                    "items": [
+                      "3250994"
+                    ]
+                  },
+                  {
+                    "order_id": "0005-573",
+                    "id": "573",
+                    "label": "Pizzeria",
+                    "soup": 0,
+                    "items": [
+                      "3251019",
+                      "3238577",
+                      "3238585"
+                    ]
+                  },
+                  {
+                    "order_id": "0006-574",
+                    "id": "574",
+                    "label": "6th St. Grill",
+                    "soup": 0,
+                    "items": [
+                      "3251120"
+                    ]
+                  },
+                  {
+                    "order_id": "0007-6960",
+                    "id": "6960",
+                    "label": "6th St. Charbroiler",
+                    "soup": 0,
+                    "items": [
+                      "3251133"
+                    ]
+                  },
+                  {
+                    "order_id": "0008-575",
+                    "id": "575",
+                    "label": "Stockpot",
+                    "soup": 0,
+                    "items": [
+                      "3251168",
+                      "3259242"
+                    ]
+                  },
+                  {
+                    "order_id": "0010-577",
+                    "id": "577",
+                    "label": "The Garden",
+                    "soup": 0,
+                    "items": [
+                      "3259245",
+                      "3259246"
+                    ]
+                  }
+                ]
+              },
+              {
+                "starttime": "16:00",
+                "endtime": "19:30",
+                "id": "4",
+                "label": "Dinner",
+                "abbreviation": "D",
+                "stations": [
+                  {
+                    "order_id": "0002-7033",
+                    "id": "7033",
+                    "label": "Home Cookin' Dinner",
+                    "soup": 0,
+                    "items": [
+                      "3250947"
+                    ]
+                  },
+                  {
+                    "order_id": "0003-572",
+                    "id": "572",
+                    "label": "Chef's Table",
+                    "soup": 0,
+                    "items": [
+                      "3250968"
+                    ]
+                  },
+                  {
+                    "order_id": "0005-573",
+                    "id": "573",
+                    "label": "Pizzeria",
+                    "soup": 0,
+                    "items": [
+                      "3238577",
+                      "3238585",
+                      "3251032"
+                    ]
+                  },
+                  {
+                    "order_id": "0006-574",
+                    "id": "574",
+                    "label": "6th St. Grill",
+                    "soup": 0,
+                    "items": [
+                      "3251124"
+                    ]
+                  },
+                  {
+                    "order_id": "0007-6960",
+                    "id": "6960",
+                    "label": "6th St. Charbroiler",
+                    "soup": 0,
+                    "items": [
+                      "3251137"
+                    ]
+                  },
+                  {
+                    "order_id": "0008-575",
+                    "id": "575",
+                    "label": "Stockpot",
+                    "soup": 0,
+                    "items": [
+                      "3251168",
+                      "3259242"
+                    ]
+                  }
+                ]
+              }
+            ]
+          ]
+        }
+      }
+    }
+  ],
+  "items": {
+    "3238561": {
+      "id": "3238561",
+      "label": "Biola Scramble",
+      "description": "",
+      "zero_entree": "0",
+      "cor_icon": [],
+      "price": "",
+      "nutrition": {},
+      "special": 1,
+      "rating": "",
+      "options": [],
+      "station": "<strong>@Chef&#039;s Table M.T.O.</strong>",
+      "nutrition_link": ""
+    },
+    "3251769": {
+      "id": "3251769",
+      "label": "French Toast w/Powdered Sugar",
+      "description": "",
+      "zero_entree": "0",
+      "cor_icon": [],
+      "price": "",
+      "nutrition": {},
+      "special": 1,
+      "rating": "",
+      "options": [],
+      "station": "<strong>@Pizzeria</strong>",
+      "nutrition_link": ""
+    },
+    "3238678": {
+      "id": "3238678",
+      "label": "Waffle Bar",
+      "description": "",
+      "zero_entree": "0",
+      "cor_icon": [],
+      "price": "",
+      "nutrition": {},
+      "special": 1,
+      "rating": "",
+      "options": [],
+      "station": "<strong>@The Garden</strong>",
+      "nutrition_link": ""
+    },
+    "3250913": {
+      "id": "3250913",
+      "label": "Burrito Breakfast Bar",
+      "description": "Salsa, Cheese, Sour Cream, Jalapeno, Olive, Tomato",
+      "zero_entree": "0",
+      "cor_icon": [],
+      "price": "",
+      "nutrition": {},
+      "special": 1,
+      "rating": "",
+      "options": [],
+      "station": "<strong>@Home Cookin&#039; Lunch</strong>",
+      "nutrition_link": ""
+    },
+    "3251106": {
+      "id": "3251106",
+      "label": "Sausage and Egg Biscuit Sandwich",
+      "description": "",
+      "zero_entree": "0",
+      "cor_icon": [],
+      "price": "",
+      "nutrition": {},
+      "special": 1,
+      "rating": "",
+      "options": [],
+      "station": "<strong>@6th St. Grill</strong>",
+      "nutrition_link": ""
+    },
+    "3251162": {
+      "id": "3251162",
+      "label": "Cream of Rice & Oatmeal",
+      "description": "",
+      "zero_entree": "0",
+      "cor_icon": [],
+      "price": "",
+      "nutrition": {},
+      "special": 1,
+      "rating": "",
+      "options": [],
+      "station": "<strong>@Stockpot</strong>",
+      "nutrition_link": ""
+    },
+    "3251019": {
+      "id": "3251019",
+      "label": "Olive, Mushroom and Sausage Pizza",
+      "description": "",
+      "zero_entree": "0",
+      "cor_icon": [],
+      "price": "",
+      "nutrition": {},
+      "special": 1,
+      "rating": "",
+      "options": [],
+      "station": "<strong>@Pizzeria</strong>",
+      "nutrition_link": ""
+    },
+    "3238577": {
+      "id": "3238577",
+      "label": "Pepperoni Pizza",
+      "description": "",
+      "zero_entree": "0",
+      "cor_icon": [],
+      "price": "",
+      "nutrition": {},
+      "special": 1,
+      "rating": "",
+      "options": [],
+      "station": "<strong>@Pizzeria</strong>",
+      "nutrition_link": ""
+    },
+    "3238585": {
+      "id": "3238585",
+      "label": "Cheese Pizza",
+      "description": "",
+      "zero_entree": "0",
+      "cor_icon": [],
+      "price": "",
+      "nutrition": {},
+      "special": 1,
+      "rating": "",
+      "options": [],
+      "station": "<strong>@Pizzeria</strong>",
+      "nutrition_link": ""
+    },
+    "3250927": {
+      "id": "3250927",
+      "label": "Roasted Herb Turkey",
+      "description": "",
+      "zero_entree": "0",
+      "cor_icon": {
+        "9": "Made without Gluten-Containing Ingredients"
+      },
+      "price": "",
+      "nutrition": {},
+      "special": 1,
+      "rating": "",
+      "options": {
+        "label": "sides",
+        "type": "items",
+        "values": [
+          {
+            "label": "Three Color Roasted Potatoes",
+            "description": "",
+            "nutrition": {}
+          },
+          {
+            "label": "Sauteed Green Beans",
+            "description": "",
+            "nutrition": {}
+          }
+        ]
+      },
+      "station": "<strong>@Home Cookin&#039; Lunch</strong>",
+      "nutrition_link": ""
+    },
+    "3250994": {
+      "id": "3250994",
+      "label": "Beef and Bean Tostada Bar",
+      "description": "",
+      "zero_entree": "0",
+      "cor_icon": {
+        "9": "Made without Gluten-Containing Ingredients"
+      },
+      "price": "",
+      "nutrition": {},
+      "special": 1,
+      "rating": "",
+      "options": {
+        "label": "sides",
+        "type": "items",
+        "values": [
+          {
+            "label": "an Array of Toppings",
+            "description": "",
+            "nutrition": {}
+          }
+        ]
+      },
+      "station": "<strong>@Chef&#039;s Table M.T.O.</strong>",
+      "nutrition_link": ""
+    },
+    "3251120": {
+      "id": "3251120",
+      "label": "Roasted Vegetable Wrap with Peppercorn Mayo",
+      "description": "",
+      "zero_entree": "0",
+      "cor_icon": {
+        "1": "vegetarian"
+      },
+      "price": "",
+      "nutrition": {},
+      "special": 1,
+      "rating": "",
+      "options": [],
+      "station": "<strong>@6th St. Grill</strong>",
+      "nutrition_link": ""
+    },
+    "3251133": {
+      "id": "3251133",
+      "label": "Spicy Chicken Sandwich",
+      "description": "",
+      "zero_entree": "0",
+      "cor_icon": [],
+      "price": "",
+      "nutrition": {},
+      "special": 1,
+      "rating": "",
+      "options": [],
+      "station": "<strong>@6th St. Charbroiler</strong>",
+      "nutrition_link": ""
+    },
+    "3251168": {
+      "id": "3251168",
+      "label": "Green Split Pea Soup",
+      "description": "",
+      "zero_entree": "0",
+      "cor_icon": {
+        "4": "vegan",
+        "9": "Made without Gluten-Containing Ingredients"
+      },
+      "price": "",
+      "nutrition": {},
+      "special": 1,
+      "rating": "",
+      "options": [],
+      "station": "<strong>@Stockpot</strong>",
+      "nutrition_link": ""
+    },
+    "3259242": {
+      "id": "3259242",
+      "label": "Cream of Roasted Potato Soup",
+      "description": "",
+      "zero_entree": "0",
+      "cor_icon": {
+        "1": "vegetarian",
+        "9": "Made without Gluten-Containing Ingredients"
+      },
+      "price": "",
+      "nutrition": {},
+      "special": 1,
+      "rating": "",
+      "options": [],
+      "station": "<strong>@Stockpot</strong>",
+      "nutrition_link": ""
+    },
+    "3259245": {
+      "id": "3259245",
+      "label": "Artichoke and Feta Cheese Vegetable Salad",
+      "description": "",
+      "zero_entree": "0",
+      "cor_icon": {
+        "1": "vegetarian",
+        "9": "Made without Gluten-Containing Ingredients"
+      },
+      "price": "",
+      "nutrition": {},
+      "special": 1,
+      "rating": "",
+      "options": [],
+      "station": "<strong>@The Garden</strong>",
+      "nutrition_link": ""
+    },
+    "3259246": {
+      "id": "3259246",
+      "label": "Honey Yogurt Fruit Salad",
+      "description": "",
+      "zero_entree": "0",
+      "cor_icon": {
+        "1": "vegetarian"
+      },
+      "price": "",
+      "nutrition": {},
+      "special": 1,
+      "rating": "",
+      "options": [],
+      "station": "<strong>@The Garden</strong>",
+      "nutrition_link": ""
+    },
+    "3251032": {
+      "id": "3251032",
+      "label": "Buffalo Chicken Pizza",
+      "description": "",
+      "zero_entree": "0",
+      "cor_icon": [],
+      "price": "",
+      "nutrition": {},
+      "special": 1,
+      "rating": "",
+      "options": [],
+      "station": "<strong>@Pizzeria</strong>",
+      "nutrition_link": ""
+    },
+    "3250947": {
+      "id": "3250947",
+      "label": "Hearty Beef Stew",
+      "description": "",
+      "zero_entree": "0",
+      "cor_icon": [],
+      "price": "",
+      "nutrition": {},
+      "special": 1,
+      "rating": "",
+      "options": {
+        "label": "sides",
+        "type": "items",
+        "values": [
+          {
+            "label": "Butter and Parsley Noodles",
+            "description": "",
+            "nutrition": {}
+          },
+          {
+            "label": "Brussels Sprouts and Bell Peppers",
+            "description": "",
+            "nutrition": {}
+          }
+        ]
+      },
+      "station": "<strong>@Home Cookin&#039; Dinner</strong>",
+      "nutrition_link": ""
+    },
+    "3250968": {
+      "id": "3250968",
+      "label": "Pad Thai Noodles",
+      "description": "",
+      "zero_entree": "0",
+      "cor_icon": [],
+      "price": "",
+      "nutrition": {},
+      "special": 1,
+      "rating": "",
+      "options": [],
+      "station": "<strong>@Chef&#039;s Table</strong>",
+      "nutrition_link": ""
+    },
+    "3251124": {
+      "id": "3251124",
+      "label": "Fish Sandwich w/Spicy Tartar Sauce",
+      "description": "",
+      "zero_entree": "0",
+      "cor_icon": [],
+      "price": "",
+      "nutrition": {},
+      "special": 1,
+      "rating": "",
+      "options": [],
+      "station": "<strong>@6th St. Grill</strong>",
+      "nutrition_link": ""
+    },
+    "3251137": {
+      "id": "3251137",
+      "label": "Garlic Steak Fries",
+      "description": "",
+      "zero_entree": "0",
+      "cor_icon": [],
+      "price": "",
+      "nutrition": {},
+      "special": 1,
+      "rating": "",
+      "options": [],
+      "station": "<strong>@6th St. Charbroiler</strong>",
+      "nutrition_link": ""
+    }
+  },
+  "cor_icons": {
+    "9": {
+      "label": "Made without Gluten-Containing Ingredients",
+      "description": "Made without Gluten-Containing Ingredients. Due to our open kitchens that handle gluten, we cannot guarantee that items made without gluten-containing ingredients are “gluten-free,” as defined by the FDA.  We make every effort to avoid gluten cross-contact; however there is always the potential for cross-contact with other gluten-containing food items, particularly in our self-serve facilities. We encourage guests to speak to the chef or manager regarding any questions about ingredients.",
+      "image": "http://legacy.cafebonappetit.com/images/public/menu-item-type-ce9d00.png?v=1407481204",
+      "is_filter": "Y"
+    },
+    "1": {
+      "label": "vegetarian",
+      "description": "Vegetarian: Contains no meat, fish, poultry, shellfish or products derived from these sources but may contain dairy or eggs",
+      "image": "http://legacy.cafebonappetit.com/images/public/menu-item-type-c9d18b.png?v=1408293613",
+      "is_filter": "Y"
+    },
+    "4": {
+      "label": "vegan",
+      "description": "Vegan: Contains absolutely no animal or dairy products.",
+      "image": "http://legacy.cafebonappetit.com/images/public/menu-item-type-668e3c.png?v=1408293613",
+      "is_filter": "Y"
+    }
+  }
+}
