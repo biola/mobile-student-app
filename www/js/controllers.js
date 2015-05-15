@@ -51,6 +51,10 @@ angular.module('starter.controllers', [])
       }
     }
   }
+
+  $scope.formatTime = function(daypart) {
+    return formatTime(daypart.starttime) + ' - ' + formatTime(daypart.endtime);
+  }
 })
 
 

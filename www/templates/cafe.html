@@ -5,9 +5,7 @@
       <div ng-repeat="daypart in currentMenu()">
         <div class="item item-divider">
           {{daypart.label}}
-          <span class="item-note">
-            {{daypart.starttime}} - {{daypart.endtime}}
-          </span>
+          <span class="item-note">{{formatTime(daypart)}}</span>
         </div>
         <ion-item ng-repeat="station in daypart.stations">
           <h2 ng-repeat="item in station.items">
