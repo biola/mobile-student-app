@@ -35,7 +35,8 @@ angular.module('starter.controllers', [])
 
 .controller('CafeCtrl', function($scope, $http, $filter) {
   // $http.get('http://legacy.cafebonappetit.com/api/2/menus?cafe=17')
-  $http.get('https://gist.githubusercontent.com/halloffame/30fc5f7585eef06b454d/raw/32141bb0ebc7b66107a2e263cf12af9f87f2eba3/menu.json')
+  // $http.get('https://gist.githubusercontent.com/halloffame/30fc5f7585eef06b454d/raw/32141bb0ebc7b66107a2e263cf12af9f87f2eba3/menu.json')
+  $http.jsonp('http://api.biola.edu/cache/cafe/menu/17?callback=JSON_CALLBACK')
     .then(function(res){
       $scope.days = res.data.days;
       $scope.items = res.data.items;
@@ -44,7 +45,7 @@ angular.module('starter.controllers', [])
 
   $scope.currentMenu = function() {
     if ($scope.days) {
-      var found = $filter('filter')($scope.days, {date: "2015-02-11"}, true);
+      var found = $filter('filter')($scope.days, {date: moment().format('YYYY-MM-DD')}, true);
       if (found.length) {
         return found[0].cafes[17].dayparts[0]
       }
