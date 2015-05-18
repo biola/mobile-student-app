@@ -1,6 +1,7 @@
 <ion-view view-title="Today's Menu">
   <ion-content>
-    <!-- <p>{{currentMenu()}}</p> -->
+    <ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()">
+    </ion-refresher>
     <ion-list>
       <div ng-repeat="daypart in currentMenu()">
         <div class="item item-divider">
@@ -9,7 +10,7 @@
         </div>
         <ion-item ng-repeat="station in daypart.stations">
           <h2 ng-repeat="item in station.items">
-            {{items[item].label}}
+            {{items()[item].label}}
             <!-- {{items[item].description}} -->
           </h2>
           <p><i class="icon ion-location"></i> {{station.label}}</p>
