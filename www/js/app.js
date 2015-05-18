@@ -48,15 +48,16 @@ angular.module('starter', ['ionic', 'starter.controllers'])
       }
     }
   })
-    .state('app.chapels', {
-      url: "/chapels",
-      views: {
-        'menuContent': {
-          templateUrl: "templates/chapels.html",
-          controller: 'ChapelsCtrl'
-        }
+
+  .state('app.chapels', {
+    url: "/chapels",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/chapels.html",
+        controller: 'ChapelsCtrl'
       }
-    })
+    }
+  })
 
   .state('app.single', {
     url: "/chapels/:chapelId",

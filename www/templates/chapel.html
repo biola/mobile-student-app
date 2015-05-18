@@ -4,8 +4,8 @@
       <ion-item class="item-avatar">
         <img ng-if="chapel.speakers.length > 0" src="{{chapel.speakers[0].thumbnail_photo_url}}" />
         <h2>{{chapel.title}}</h2>
-        <p><strong>{{formatDate(chapel.starts_at)}}</strong></p>
-        <p>{{ formatSpeakers(chapel.speakers) }}</p>
+        <p><strong>{{helpers.formatDate(chapel.starts_at)}}</strong></p>
+        <p>{{helpers.formatSpeakers(chapel.speakers)}}</p>
         <p><i class="icon ion-location"></i> {{chapel.location.name}}</p>
       </ion-item>
       <ion-item class="item-body">

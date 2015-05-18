@@ -34,64 +34,31 @@ angular.module('starter.controllers', ['starter.services'])
 })
 
 .controller('CafeCtrl', function($scope, cafeService) {
-  $scope.currentMenu = function() {
-    return cafeService.currentMenu();
-  };
+  $scope.helpers = Helpers.cafe;
 
+  $scope.currentMenu = function() { return cafeService.currentMenu(); };
   $scope.days = function() { return cafeService.days; };
   $scope.items = function() { return cafeService.items; };
   $scope.cor_icons = function() { return cafeService.cor_icons; };
 
-  $scope.formatTime = function(daypart) {
-    return formatTime(daypart.starttime) + ' - ' + formatTime(daypart.endtime);
-  };
-
   $scope.doRefresh = function() {
-    return cafeService.refreshMenu(function(){
+    return cafeService.refresh(function(){
       console.log('cafe menu refreshed');
       $scope.$broadcast('scroll.refreshComplete');
     });
   }
 })
 
-
-.controller('ChapelsCtrl', function($scope, $http) {
-  $http.get('https://gist.githubusercontent.com/halloffame/122124a23185dc246382/raw/7bbd24dbf259f55c04a404eee46d1b6595a85ff6/chapels.json')
-    .then(function(res){
-      $scope.chapels = res.data.events.slice(0,50);
-    });
-
-  $scope.formatDate = function(date) {
-    date = new Date(date)
-    return date.toDateString() + " @ " + date.toLocaleTimeString();
-  }
-  $scope.formatSpeakers = function(speakers) {
-    return speakers.map(function(s){ return s.name; }).join(', ');
+.controller('ChapelsCtrl', function($scope, chapelService) {
+  $scope.helpers = Helpers.chapel;
+  $scope.chapels = function() {
+    return chapelService.events;
   }
 })
 
-.controller('ChapelCtrl', function($scope, $stateParams, $http, $filter) {
-  // $http.get('https://apps.biola.edu/chapel/api/v1/academic_years/12/events.json')
-  $http.get('https://gist.githubusercontent.com/halloffame/122124a23185dc246382/raw/7bbd24dbf259f55c04a404eee46d1b6595a85ff6/chapels.json')
-    .then(function(res){
-      // Todo, this should only query by ID. Or use already loaded data
-      var chapels = res.data.events.slice(0,50);
-      var found = $filter('filter')(chapels, {id: +$stateParams.chapelId}, true);
-      if (found.length) {
-        $scope.chapel = found[0];
-      }
-    });
-
-  $scope.speakers = function() {
-    $scope.chapel.speakers.join(', ');
-  }
-
-  $scope.formatDate = function(date) {
-    date = new Date(date)
-    return date.toDateString() + " @ " + date.toLocaleTimeString();
-  }
-  $scope.formatSpeakers = function(speakers) {
-    return speakers.map(function(s){ return s.name; }).join(', ');
-  }
-
+.controller('ChapelCtrl', function($scope, $stateParams, chapelService) {
+  $scope.helpers = Helpers.chapel;
+  chapelService.findOne($stateParams.chapelId, function(result) {
+    $scope.chapel = result;
+  });
 });
