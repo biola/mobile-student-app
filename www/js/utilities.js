@@ -1,7 +1,7 @@
 window.Utilities = {
 
   // Converts 24 hour to 12 hour - ex: "14:00" to "2:00pm"
-  formatTime: function(time) {
+  format24HourTimeString: function(time) {
     // Check correct time format and split into components
     time = time.toString().match(/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
 

@@ -1,8 +1,8 @@
 window.Helpers = {
   chapel: {
     formatDate: function(date) {
-      date = new Date(date)
-      return date.toDateString() + " @ " + date.toLocaleTimeString();
+      date = new Date(date);
+      return moment(date).format("dddd, MMM D, YYYY @ h:mma");
     },
     formatSpeakers: function(speakers) {
       return speakers.map(function(s){ return s.name; }).join(', ');
@@ -11,7 +11,7 @@ window.Helpers = {
 
   cafe: {
     formatTime: function(daypart) {
-      return Utilities.formatTime(daypart.starttime) + ' - ' + Utilities.formatTime(daypart.endtime);
+      return Utilities.format24HourTimeString(daypart.starttime) + ' - ' + Utilities.format24HourTimeString(daypart.endtime);
     }
   }
 }

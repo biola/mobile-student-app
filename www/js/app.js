@@ -59,7 +59,7 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     }
   })
 
-  .state('app.single', {
+  .state('app.chapel', {
     url: "/chapels/:chapelId",
     views: {
       'menuContent': {
