@@ -27,13 +27,21 @@ angular.module('starter.services', [])
 
 .service('chapelService', function($http, $filter) {
   var _thisService = this;
+  this.nextPage = 1;
+  this.events = [];
 
-  this.refresh = function(callback) {
-    // $http.json('http://localhost:3000/api/v2/events?limit=40&upcoming=true')
-    $http.get('https://gist.githubusercontent.com/halloffame/122124a23185dc246382/raw/7bbd24dbf259f55c04a404eee46d1b6595a85ff6/chapels.json')
+  this.refresh = function(callback, resetPage) {
+    if (resetPage) {
+      _thisService.nextPage = 1;
+    }
+
+    // $http.get('http://localhost:3000/api/v2/events?upcoming=true')
+    $http.get('http://localhost:3000/api/v2/events?page='+_thisService.nextPage)
       .then(function(res){
-        _thisService.events = res.data.events;
-        if (callback) { callback(); }
+        if (resetPage) { _thisService.events = []; }
+        _thisService.events = _thisService.events.concat(res.data.events);
+        _thisService.nextPage = res.data.meta.next_page;
+        if (callback) { callback(res.data.events); }
       });
   };
   // Do inital refresh on load
@@ -46,10 +54,18 @@ angular.module('starter.services', [])
     if (found && found.length) {
       callback(found[0]);
     } else {
-      $http.json('http://localhost:3000/api/v2/events/' + chapelId)
+      $http.get('http://localhost:3000/api/v2/events/' + chapelId)
       .then(function(res){
         callback(res.data.event);
       });
+    }
+  }
+
+  this.moreEvents = function(callback) {
+    if (_thisService.nextPage) {
+      _thisService.refresh(callback);
+    } else {
+      callback([]);
     }
   }
 

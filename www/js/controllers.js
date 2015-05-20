@@ -53,6 +53,19 @@ angular.module('starter.controllers', ['starter.services'])
   $scope.helpers = Helpers.chapel;
   $scope.chapels = function() {
     return chapelService.events;
+  };
+
+  $scope.loadMore = function() {
+    chapelService.moreEvents(function(events) {
+      $scope.$broadcast('scroll.infiniteScrollComplete');
+    });
+  };
+
+  $scope.doRefresh = function() {
+    return chapelService.refresh(function(){
+      console.log('Chapels refreshed');
+      $scope.$broadcast('scroll.refreshComplete');
+    }, true);
   }
 })
 

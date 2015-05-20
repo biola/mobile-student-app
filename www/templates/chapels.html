@@ -1,5 +1,7 @@
 <ion-view view-title="Chapels">
   <ion-content>
+    <ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()">
+    </ion-refresher>
     <ion-list>
       <ion-item class="item-thumbnail-left" ng-repeat="chapel in chapels()" href="#/app/chapels/{{chapel.id}}">
         <img ng-if="chapel.speakers.length > 0" src="{{chapel.speakers[0].thumbnail_photo_url}}" />
@@ -10,5 +12,9 @@
         <p ng-if="chapel.location"><i class="icon ion-location"></i> {{chapel.location.name}}</p>
       </ion-item>
     </ion-list>
+    <ion-infinite-scroll
+      on-infinite="loadMore()"
+      distance="10%">
+    </ion-infinite-scroll>
   </ion-content>
 </ion-view>
