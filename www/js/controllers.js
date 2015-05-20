@@ -35,11 +35,7 @@ angular.module('starter.controllers', ['starter.services'])
 
 .controller('CafeCtrl', function($scope, cafeService) {
   $scope.helpers = Helpers.cafe;
-
-  $scope.currentMenu = function() { return cafeService.currentMenu(); };
-  $scope.days = function() { return cafeService.days; };
-  $scope.items = function() { return cafeService.items; };
-  $scope.cor_icons = function() { return cafeService.cor_icons; };
+  $scope.cafe = cafeService;
 
   $scope.doRefresh = function() {
     return cafeService.refresh(function(){
@@ -51,15 +47,7 @@ angular.module('starter.controllers', ['starter.services'])
 
 .controller('ChapelsCtrl', function($scope, chapelService) {
   $scope.helpers = Helpers.chapel;
-  $scope.chapels = function() {
-    return chapelService.events;
-  };
-
-  $scope.loadMore = function() {
-    chapelService.moreEvents(function(events) {
-      $scope.$broadcast('scroll.infiniteScrollComplete');
-    });
-  };
+  $scope.chapel = chapelService;
 
   $scope.doRefresh = function() {
     return chapelService.refresh(function(){
@@ -67,6 +55,12 @@ angular.module('starter.controllers', ['starter.services'])
       $scope.$broadcast('scroll.refreshComplete');
     }, true);
   }
+
+  $scope.loadMore = function() {
+    chapelService.moreEvents(function(events) {
+      $scope.$broadcast('scroll.infiniteScrollComplete');
+    });
+  };
 })
 
 .controller('ChapelCtrl', function($scope, $stateParams, chapelService) {

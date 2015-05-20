@@ -3,19 +3,27 @@
     <ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()">
     </ion-refresher>
     <ion-list>
-      <div ng-repeat="daypart in currentMenu()">
+      <div ng-repeat="daypart in cafe.currentMenu()">
         <div class="item item-divider">
           {{daypart.label}}
           <span class="item-note">{{helpers.formatTime(daypart)}}</span>
         </div>
         <ion-item ng-repeat="station in daypart.stations">
           <h2 ng-repeat="item in station.items">
-            {{items()[item].label}}
+            {{cafe.items[item].label}}
             <!-- {{items[item].description}} -->
           </h2>
           <p><i class="icon ion-location"></i> {{station.label}}</p>
         </ion-item>
       </div>
     </ion-list>
+    <div class="spinner-block" ng-if="!cafe.isLoaded">
+      <ion-spinner></ion-spinner>
+    </div>
+    <div class="card" ng-if="cafe.isLoaded && !cafe.currentMenu()">
+      <div class="item item-text-wrap">
+        No menu today, please check back later.
+      </div>
+    </div>
   </ion-content>
 </ion-view>

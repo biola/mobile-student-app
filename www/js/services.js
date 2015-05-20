@@ -1,23 +1,26 @@
 angular.module('starter.services', [])
 
 .service('cafeService', function($http, $filter) {
-  var _thisService = this;
+  var self = this;
+  self.isLoaded = false;
 
-  this.refresh = function(callback) {
+  self.refresh = function(callback) {
     $http.jsonp('http://api.biola.edu/cache/cafe/menu/17?callback=JSON_CALLBACK')
       .then(function(res){
-        _thisService.days = res.data.days;
-        _thisService.items = res.data.items;
-        _thisService.cor_icons = res.data.cor_icons;
+        self.days = res.data.days;
+        self.items = res.data.items;
+        self.cor_icons = res.data.cor_icons;
+        self.isLoaded = true;
         if (callback) { callback(); }
       });
   };
-  // Do inital refresh on load
-  this.refresh();
 
-  this.currentMenu = function() {
-    if (this.days) {
-      var found = $filter('filter')(this.days, {date: moment().format('YYYY-MM-DD')}, true);
+  // Do inital refresh on load
+  self.refresh();
+
+  self.currentMenu = function() {
+    if (self.days) {
+      var found = $filter('filter')(self.days, {date: moment().format('YYYY-MM-DD')}, true);
       if (found && found.length) {
         return found[0].cafes[17].dayparts[0]
       }
@@ -26,29 +29,37 @@ angular.module('starter.services', [])
 })
 
 .service('chapelService', function($http, $filter) {
-  var _thisService = this;
-  this.nextPage = 1;
-  this.events = [];
+  var self = this;
+  self.nextPage = 1;
+  self.events = [];
+  self.noEvents = false;
 
-  this.refresh = function(callback, resetPage) {
-    if (resetPage) {
-      _thisService.nextPage = 1;
-    }
+  self.refresh = function(callback, hardRefresh) {
+    // Reset nextPage index back to 1. We will clear events further down after getting the
+    //   response from the API but right before repopulating it.
+    if (hardRefresh) { self.nextPage = 1; }
 
-    // $http.get('http://localhost:3000/api/v2/events?upcoming=true')
-    $http.get('http://localhost:3000/api/v2/events?page='+_thisService.nextPage)
+    // Query chapel api for upcoming events.
+    $http.get('http://localhost:3000/api/v2/events?page='+self.nextPage) // ?upcoming=true
       .then(function(res){
-        if (resetPage) { _thisService.events = []; }
-        _thisService.events = _thisService.events.concat(res.data.events);
-        _thisService.nextPage = res.data.meta.next_page;
+        // Clear events if we are doing a hard reset
+        if (hardRefresh) { self.events = []; }
+
+        // Save events and increment nextPage index for infinite scrolling
+        self.events = self.events.concat(res.data.events);
+        self.nextPage = res.data.meta.next_page;
+
+        // Wait to set noEvents to true until after we hear back from the server
+        if (!self.events.length) { self.noEvents = true; }
+
         if (callback) { callback(res.data.events); }
       });
   };
   // Do inital refresh on load
-  this.refresh();
+  self.refresh();
 
-  this.findOne = function(chapelId, callback) {
-    var found = $filter('filter')(_thisService.events, {id: +chapelId}, true);
+  self.findOne = function(chapelId, callback) {
+    var found = $filter('filter')(self.events, {id: +chapelId}, true);
 
     // Lookup from cache first, otherwise do a new api lookup
     if (found && found.length) {
@@ -61,9 +72,10 @@ angular.module('starter.services', [])
     }
   }
 
-  this.moreEvents = function(callback) {
-    if (_thisService.nextPage) {
-      _thisService.refresh(callback);
+  // Used for infinite scrolling. nextPage will be nil if we have gotten to the last page.
+  self.moreEvents = function(callback) {
+    if (self.nextPage) {
+      self.refresh(callback);
     } else {
       callback([]);
     }

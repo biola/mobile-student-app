@@ -3,7 +3,12 @@
     <ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()">
     </ion-refresher>
     <ion-list>
-      <ion-item class="item-thumbnail-left" ng-repeat="chapel in chapels()" href="#/app/chapels/{{chapel.id}}">
+      <div class="card" ng-if="chapel.noChapels">
+        <div class="item item-text-wrap">
+          No future chapels scheduled
+        </div>
+      </div>
+      <ion-item class="item-thumbnail-left" ng-repeat="chapel in chapel.events" href="#/app/chapels/{{chapel.id}}">
         <img ng-if="chapel.speakers.length > 0" src="{{chapel.speakers[0].thumbnail_photo_url}}" />
         <h2>{{chapel.title}}</h2>
         <!-- <p><strong>{{chapel.date}} @ {{chapel.time}}</strong></p> -->
