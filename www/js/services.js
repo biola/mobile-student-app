@@ -40,14 +40,20 @@ angular.module('starter.services', [])
     if (hardRefresh) { self.nextPage = 1; }
 
     // Query chapel api for upcoming events.
-    $http.get('http://localhost:3000/api/v2/events?page='+self.nextPage) // ?upcoming=true
+    $http.get('https://apps.biola.edu/chapel/api/v2/events?page='+self.nextPage) // ?upcoming=true
       .then(function(res){
         // Clear events if we are doing a hard reset
         if (hardRefresh) { self.events = []; }
 
         // Save events and increment nextPage index for infinite scrolling
-        self.events = self.events.concat(res.data.events);
-        self.nextPage = res.data.meta.next_page;
+        //   but first compare to make sure the current page is actually the page you are looking for.
+        //   I was having problems with this getting called twice right away and since next_page isn't
+        //   incremented until now it was making duplicate requests for page one, and it was showing
+        //   duplicate events.
+        if (res.data.meta.current_page === self.nextPage) {
+          self.events = self.events.concat(res.data.events);
+          self.nextPage = res.data.meta.next_page;
+        }
 
         // Wait to set noEvents to true until after we hear back from the server
         if (!self.events.length) { self.noEvents = true; }
@@ -65,7 +71,7 @@ angular.module('starter.services', [])
     if (found && found.length) {
       callback(found[0]);
     } else {
-      $http.get('http://localhost:3000/api/v2/events/' + chapelId)
+      $http.get('https://apps.biola.edu/chapel/api/v2/events/' + chapelId)
       .then(function(res){
         callback(res.data.event);
       });
