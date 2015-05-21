@@ -22,11 +22,11 @@ angular.module('starter.controllers', ['starter.services'])
   };
 
   $scope.directory = function() {
-    cordova.InAppBrowser.open('http://www.biola.edu/directory', '_blank', 'location=no');
+    cordova.InAppBrowser.open('http://www.biola.edu/directory', '_system', 'location=no');
   }
 
   $scope.library = function() {
-    cordova.InAppBrowser.open('http://library.biola.edu/m', '_blank', 'location=no');
+    cordova.InAppBrowser.open('http://library.biola.edu/m', '_system', 'location=no');
   }
 
 
