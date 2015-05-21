@@ -21,6 +21,15 @@ angular.module('starter.controllers', ['starter.services'])
     $scope.modal.show();
   };
 
+  $scope.directory = function() {
+    cordova.InAppBrowser.open('http://www.biola.edu/directory', '_blank', 'location=no');
+  }
+
+  $scope.library = function() {
+    cordova.InAppBrowser.open('http://library.biola.edu/m', '_blank', 'location=no');
+  }
+
+
   // Perform the login action when the user submits the login form
   $scope.doLogin = function() {
     console.log('Doing login', $scope.loginData);
