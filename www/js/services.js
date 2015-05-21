@@ -40,7 +40,7 @@ angular.module('starter.services', [])
     if (hardRefresh) { self.nextPage = 1; }
 
     // Query chapel api for upcoming events.
-    $http.get('https://apps.biola.edu/chapel/api/v2/events?page='+self.nextPage) // ?upcoming=true
+    $http.get('https://apps.biola.edu/chapel/api/v2/events?upcoming=true&page='+self.nextPage) // ?upcoming=true
       .then(function(res){
         // Clear events if we are doing a hard reset
         if (hardRefresh) { self.events = []; }
