@@ -67,6 +67,15 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         controller: 'ChapelCtrl'
       }
     }
+  })
+
+  .state('app.links', {
+    url: "/links",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/links.html"
+      }
+    }
   });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/chapels');

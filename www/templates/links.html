@@ -1,0 +1,10 @@
+<ion-view view-title="Links">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-icon-right" ng-repeat="link in links" ng-click="browser(link.url)">
+        {{link.title}}
+        <i class="icon ion-ios-redo-outline"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

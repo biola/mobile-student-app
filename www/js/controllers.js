@@ -4,6 +4,8 @@ angular.module('starter.controllers', ['starter.services'])
   // Form data for the login modal
   $scope.loginData = {};
 
+  $scope.links = Settings.links;
+
   // Create the login modal that we will use later
   $ionicModal.fromTemplateUrl('templates/login.html', {
     scope: $scope
