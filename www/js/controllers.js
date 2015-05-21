@@ -21,14 +21,13 @@ angular.module('starter.controllers', ['starter.services'])
     $scope.modal.show();
   };
 
-  $scope.directory = function() {
-    cordova.InAppBrowser.open('http://www.biola.edu/directory', '_system', 'location=no');
-  }
+  $scope.browser = function(url, inApp) {
+    openIn = !inApp ? '_system' : '_blank'
+    window.open(encodeURI(url), openIn);
 
-  $scope.library = function() {
-    cordova.InAppBrowser.open('http://library.biola.edu/m', '_system', 'location=no');
+    // Not working in ionic view for some reason
+    // cordova.InAppBrowser.open('http://www.biola.edu/directory', '_system', 'location=no');
   }
-
 
   // Perform the login action when the user submits the login form
   $scope.doLogin = function() {
